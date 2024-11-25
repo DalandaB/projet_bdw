@@ -1,0 +1,1 @@
+Voici le repository que je viens de créer, tu pourras pousser ton code dans ta branche et moi dans le mien, et on pourra comparer. Vu que tu es partie alors que j'avais des infos. Regardes quelques tutos pour apprendre à utiliser git. Si tu es bloqué signales.
