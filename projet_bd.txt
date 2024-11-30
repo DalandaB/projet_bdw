@@ -1,0 +1,76 @@
+projet: un jeu de placement de briques afin de compléter une grille
+
+Règles:
+
+joueuese possède grille
+grille = cases vides + cases cibles
+pioche = 4 briques disponibles
+toutes les cases cibles recouvertes par briques => victoire
+début new tour => joueur sélectionne 1 brique/4 briques disponibles(pioche) avec 2 options:
+	placer sur sa grille dans 1 case cible
+	défausser et remplacement par new brique
+
+fin tour => vérification victoire
+victoire => score == nb_tours
+
+
+2- Design du site et pages statiques
+où est-ce que je prends le jeu de données pour l'affichage des statistiques ?
+
+Enfin, sauvegardez régulièrement votre travail (ex, sur le gitlab http://forge.univ-lyon1.fr).
+jeu de données à intégrer
+https://perso.liris.cnrs.fr/fabien.duchateau/ens/BDW/projet/bd-projet.sql
+
+mise à jour du fichier serveur.py
+
+Si votre page d'accueil appelle le modèle, il faudra soit commenter les appels au modèle, soit aller sur une autre page de votre site après avoir lancé le serveur (ex, en tapant dans le navigateur http://localhost:4242/historique).
+
+#1)création du schéma relationnel dérivé du diagramme E/A (pas important pour le moment)
+
+#2)création du script sql permettant la création de la base de données 
+
+#3)début de création de l'arborescence
+
+
+#4)insertion de quelques instances fictives dans les tables les plus importantes 
+
+#5)Fonctionnalité 1 
+
+#6)Fonctionnalité 2 (maintenant)
+objectif : afficher une grille
+
+astuce : réfléchir à une présentation de la 
+grille qui conviendra pour les prochaines 
+fonctionnalités
+
+1-dessiner une grille 9x8
+2-cases hachurées == cases cibles
+3-pas utilisée pour jouer une partie
+4-style graphique libre
+5-programmer la pioche
+6-pioche == formulaire de sélection d'1 brique
+parmi 4
+formulaire soumis => affichage des informations
+sur la brique sélectionnée
+7-les 4 briques sont choisies aléatoirement
+dans la bd tq L or l <= 2
+8-brique sélectionnée => complétion pioche avec
+nouvelle brique choisie aléatoirement dans la
+bd tq L or l <= 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

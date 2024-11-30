@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h3>Nombre d'instances de 3 table de notre choix</h3>
+<p> joueuses: {{REQUEST_VARS['nb_instances_1'][0][0]}}</p>
+<p> pièces: {{REQUEST_VARS['nb_instances_2'][0][0]}}</p>
+<p> constructions: {{REQUEST_VARS['nb_instances_3'][0][0]}}</p>
+
+
+<h3>top 5 des couleurs ayant le plus de briques</h3>
+<ul>
+    {% for instance in REQUEST_VARS['top_5'] %}
+        <li>{{ instance[0] }}</li>
+    {% endfor %}
+</ul>
+
+<h3>test de la valeur de retour</h3>
+{{REQUEST_VARS['infos_joueuses']}}
+
+<h3>Informations sur les joueuses</h3>
+<ul>
+    {% for instance in REQUEST_VARS['infos_joueuses'] %}
+        <li>{{ instance[0] }} ,meilleur score :{{ instance[1] }},pire score :{{ instance[2] }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Statistiques sur les parties</h3>
+<ul>
+    {% for instance in REQUEST_VARS['parties'] %}
+        <li>partie {{ instance[0] }} ,nombre de pièces piochées :{{ instance[1] }}, défaussées :{{ instance[2] }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Nombre moyen de tours, pour chaque mois et année</h3>
+<ul>
+    {% for instance in REQUEST_VARS['nb_tours'] %}
+        <li>mois-année : {{ instance[0] }} ,nombre moyen de tours :{{ instance[1] }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Top 3 des parties dans lesquelles les plus grandes pièces sont déplacées</h3>
+<ul>
+    {% for instance in REQUEST_VARS['top_3'] %}
+        <li>partie {{ instance[0] }} ,nombre de pièces :{{ instance[1] }},aire:{{ instance[2] }}</li>
+    {% endfor %}
+</ul>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

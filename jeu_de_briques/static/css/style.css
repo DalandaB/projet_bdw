@@ -1,0 +1,161 @@
+body {
+    background: linear-gradient(135deg, #eef2f3, #ffffff); /* Dégradé élégant */
+    font-family: 'Poppins', Arial, sans-serif; /* Police moderne et professionnelle */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+
+header {
+    background: linear-gradient(135deg, rgba(0, 64, 128, 0.8), rgba(106, 90, 205, 0.8)),
+        url('/serial_critique/static/img/poissons.jpeg') no-repeat center center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+img {
+    opacity: 1;
+}
+
+
+#div-central {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 20px auto;
+    padding: 20px;
+    gap: 30px;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+nav {
+    flex: 2;
+    background-color: #dcd6f7;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav a {
+    color: #4a4af4;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #6a5acd;
+    color: white;
+    box-shadow: 0 4px 8px rgba(106, 90, 205, 0.4);
+}
+
+main {
+    flex: 8;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a5acd;
+    color: white;
+    padding: 15px 30px;
+    font-size: 0.9em;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 -4px 8px rgba(106, 90, 205, 0.4);
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Alert Styles */
+.alert-error,
+.alert-success,
+.alert-warning {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-error {
+    background-color: #ffe5e5;
+    border: 1px solid #ff4d4d;
+    color: #a10000;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    border: 1px solid #4caf50;
+    color: #1b5e20;
+}
+
+.alert-warning {
+    background-color: #fff8e1;
+    border: 1px solid #ffc107;
+    color: #8d6e63;
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adding a hover effect to the header title */
+header h1:hover {
+    color: #ffd700;
+    transform: scale(1.05);
+}
+
+/* Improving buttons (if any exist) */
+button {
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #4a4af4;
+    transform: scale(1.1);
+}
