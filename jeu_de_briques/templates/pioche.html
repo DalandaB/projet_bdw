@@ -25,7 +25,9 @@
 
     </form>
 
-   
+    {% for instance in REQUEST_VARS['infos_pieces'] %}
+        <p>id : {instance[0]}, longueur:{instance[1]}, largeur:{instance[2]}, couleur:{instance[4]}</p>
+    {%endfor%}
     
     
 

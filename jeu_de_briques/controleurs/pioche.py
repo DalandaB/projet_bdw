@@ -10,7 +10,7 @@ REQUEST_VARS['random_pieces'] = get_4_random_pieces(SESSION['CONNEXION'])
 if POST or 'piece_id' in POST:  # Vérifie si le formulaire a été soumis 
     try:
         # Récupère l'id correspondant de la piece choisie
-        id_piece = POST['piece_id'] #[0][0]
+        id_piece = POST['piece_id'][0] #[0]
         piece_existante = get_existing_piece(SESSION['CONNEXION'],id_piece)
         REQUEST_VARS['infos_pieces'] = get_existing_piece(SESSION['CONNEXION'],id_piece)
 
