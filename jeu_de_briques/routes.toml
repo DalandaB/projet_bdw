@@ -12,3 +12,9 @@ template = "accueil.html"
 url = "statistiques"
 controleur = "controleurs/statistiques.py"
 template = "statistiques.html"
+
+[[routes]]
+url = "grille_pygame"
+controleur = "controleurs/grille_pygame.py"
+template = "grille_pygame.html"
+

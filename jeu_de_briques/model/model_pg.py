@@ -1,6 +1,8 @@
 import psycopg
 from psycopg import sql
 from logzero import logger
+from jinja2 import Environment, FileSystemLoader
+import os
 
 
 def execute_select_query(connexion, query, params=[]):
@@ -77,9 +79,6 @@ def get_top3_parties(connexion):
     return execute_select_query(connexion, query)
      
      
-     
-    
- 
     
  
     

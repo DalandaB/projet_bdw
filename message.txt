@@ -4,3 +4,28 @@ git pull
 git add .
 git commit -m "commentaire"
 git push
+
+git et github cours (à chaque fois j'oublie)
+git : open source
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
