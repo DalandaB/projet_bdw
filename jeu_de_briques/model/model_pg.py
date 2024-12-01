@@ -1,8 +1,6 @@
 import psycopg
 from psycopg import sql
 from logzero import logger
-from jinja2 import Environment, FileSystemLoader
-import os
 
 
 def execute_select_query(connexion, query, params=[]):
@@ -79,48 +77,54 @@ def get_top3_parties(connexion):
     return execute_select_query(connexion, query)
      
      
-    
- 
+def get_4_random_pieces(connexion):
+    query = 'SELECT * FROM piece WHERE longueur <= 2 OR largeur <= 2 ORDER BY RANDOM() LIMIT 4;'
+    return execute_select_query(connexion,query)
+
+def get_existing_piece(connexion,id_piece):
+    query = 'SELECT * FROM piece where id = %s'
+    return execute_select_query(connexion, query, [id_piece])
+
     
  
     
  
     
 
-    
- 
-    
- 
-     
- 
-    
-        
-        
-        
-     
-        
-     
-        
-
-
-     
-        
-        
-        
-        
-     
-        
-
- 
-    
-    
-    
- 
     
  
     
  
      
+ 
+    
+        
+        
+        
+     
+        
+     
+        
+
+
+     
+        
+        
+        
+        
+     
+        
+
+ 
+    
+    
+    
+ 
+    
+ 
+    
+ 
+     
     
     
     
@@ -140,101 +144,6 @@ def get_top3_parties(connexion):
 
 
 
-
-#model de brouillon
-
-def get_instances(connexion, nom_table):
-    """
-    Retourne les instances de la table nom_table
-    String nom_table : nom de la table
-    """
-    query = sql.SQL('SELECT * FROM {table}').format(table=sql.Identifier(nom_table), )
-    return execute_select_query(connexion, query)
-
-
-
-def get_episodes_for_num(connexion, numero):
-    """
-    Retourne le titre des épisodes numérotés numero
-    Integer numero : numéro des épisodes
-    """
-    query = 'SELECT titre FROM episodes where numéro=%s'
-    return execute_select_query(connexion, query, [numero])
-
-def get_serie_by_name(connexion, nom_serie):
-    """
-    Retourne les informations sur la série nom_serie (utilisé pour vérifier qu'une série existe)
-    String nom_serie : nom de la série
-    """
-    query = 'SELECT * FROM series where nomsérie=%s'
-    return execute_select_query(connexion, query, [nom_serie])
-
-def insert_serie(connexion, nom_serie):
-    """
-    Insère une nouvelle série dans la BD
-    String nom_serie : nom de la série
-    Retourne le nombre de tuples insérés, ou None
-    """
-    query = 'INSERT INTO series VALUES(%s)'
-    return execute_other_query(connexion, query, [nom_serie])
-
-
-#fonction officielle de test, si elle marche je supprimerai toutes les autres fonctions encombrantes
-def insert_new_critique(connexion, nomserie, texte, pseudo):
-    """
-    Insère une nouvelle critique dans la base de données.
-    :param connexion: Connection à la base de données
-    :param nomserie: Nom de la série associée à la critique
-    :param texte: Texte de la critique
-    :param pseudo: Pseudo de l'utilisateur
-    :return: True si réussi, False sinon
-    """
-    # Récupère le nouvel idcritique
-    query_id = "SELECT MAX(idcritique) FROM critiques"
-    result = execute_select_query(connexion, query_id)
-    new_idcritique = (result[0][0] + 1) if result and result[0][0] is not None else 1
-       # new_idcritique = (result[0][0] + 1) if result and result[0][0] is not None else 1
-
-
-    # Prépare la requête d'insertion
-    query_insert = "INSERT INTO critiques VALUES (%s, NOW(), %s, %s, %s)"
-
-        
-    
-    # Exécute la requête avec les paramètres
-    return execute_select_query(connexion, query_insert, [new_idcritique, pseudo, texte, nomserie])
-    #    return execute_other_query(connexion, query_insert, [new_idcritique, pseudo, texte, nomserie])
-    """
-    query_insert = 
-        INSERT INTO critiques (idcritique, datecritique, pseudo, texte, nomserie)
-        VALUES (%s, NOW(), %s, %s, %s)
-    """
-
-    
-
-def get_table_like(connexion, nom_table, like_pattern):
-    """
-    Retourne les instances de la table nom_table dont le nom correspond au motif like_pattern
-    String nom_table : nom de la table
-    String like_pattern : motif pour une requête LIKE
-    """
-    motif = '%' + like_pattern + '%'
-    nom_att = 'nomsérie'  # nom attribut dans séries (à éviter)
-    if nom_table == 'actrices':  # à éviter
-        nom_att = 'nom'  # nom attribut dans actrices (à éviter)
-    query = sql.SQL("SELECT * FROM {} WHERE {} ILIKE {}").format(
-        sql.Identifier(nom_table),
-        sql.Identifier(nom_att),
-        sql.Placeholder())
-    #    like_pattern=sql.Placeholder(name=like_pattern))
-    return execute_select_query(connexion, query, [motif])
-
-
-
-
-#c'est ici que commence la fonctionnalité
-
-#pas de grosses contraintes pour le moment, la personne devra elle même insérer son pseudo, le texte et le nom du film correspondant
 
 
 

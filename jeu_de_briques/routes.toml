@@ -18,3 +18,22 @@ url = "grille_pygame"
 controleur = "controleurs/grille_pygame.py"
 template = "grille_pygame.html"
 
+[[routes]]
+url = "pioche"
+controleur = "controleurs/pioche.py"
+template = "pioche.html"
+
+[[routes]]
+url = "submit_choice"
+controleur = "controleurs/pioche.py"
+template = "pioche.html"
+
+
+
+
+
+
+
+
+
+

@@ -22,4 +22,9 @@ url = "grille_pygame"
 controleur = "controleurs/grille_pygame.py"
 template = "grille_pygame.html"
 
+    piece :{{ id_piece[0] }},longueur :{{ id_piece[1] }},largeur :{{ id_piece[2] }},couleur :{{ id_piece[4] }}
+
+{% if POST['piece_id'] != 0 %}
+<p>id : {REQUEST_VARS['infos_pieces'][0]}, longueur:{REQUEST_VARS['infos_pieces'][1]}, largeur:{REQUEST_VARS['infos_pieces'][2]}, couleur:{REQUEST_VARS['infos_pieces'][4]}</p>
+{%endif%}
 """

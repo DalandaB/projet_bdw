@@ -58,21 +58,50 @@ dans la bd tq L or l <= 2
 nouvelle brique choisie aléatoirement dans la
 bd tq L or l <= 2
 
-Fonctionnalité 2
-grille respectant le motif affiché
-cases hachurées == cases cibles
-représentation de la grille en console 
-ou autre format selon le choix effectué
-style graphique == apparence visuelle de la 
-grille; exemple : points et symboles
-
-on va faire la grille avec pygame !
-Un fichier.py qui aura la logique d'affichage
-de la grille avec le motif correspondant 
-une fois qu'on aura cliqué sur le lien afficher
-grille
 
 pioche : formulaire
+
+génères 4 pieces de facon aléatoires
+SELECT * FROM piece 
+ORDER BY RANDOM() LIMIT 4;
+
+uniquement parmi les briques qui ont une
+longueur ou une largeur inférieure ou égale à 2 
+SELECT * FROM piece 
+WHERE longueur <= 2 OR largeur <= 2
+ORDER BY RANDOM() LIMIT 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if you can recreate this program you have skills people are willing to pay for
 

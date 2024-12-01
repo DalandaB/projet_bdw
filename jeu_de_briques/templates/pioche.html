@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block main_content %}
+
+
+    <h2>Pioche : Sélectionnez une brique/pièce parmi 4</h2>
+
+    <form   action="submit_choice" method = "post"> <!--ne change plus submit_review-->
+        <!-- Liste déroulante pour "nomserie" -->
+        <label for="piece_id"> Ici :</label>
+        <select id="piece_id" name="piece_id" required>
+            <option value="">-- Sélectionnez une piece  --</option>
+            {% for instance in REQUEST_VARS['random_pieces'] %}
+                <option value="piece_id">{{ instance[0] }}</option>
+            {% endfor %}
+
+        </select>
+        <br><br>
+
+
+        <!-- Bouton en lien -->
+        <!--ne change plus rien ici aussi-->
+        <button type="submit"  name="submit_choice"><a href="/submit_choice">valider le choix</a></button>
+
+    </form>
+
+   
+    
+    
+
+
+    {% include 'message.html' %}
+
+
+
+{% endblock %}
+
