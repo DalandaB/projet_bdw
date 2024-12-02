@@ -2,6 +2,8 @@
 # - url : chemin dans l'URL
 # - controleur : chemin vers le fichier du controleur
 # - template : chemin vers le fichier de template
+#controleur = "controleurs/grille_pygame.py"
+
 
 [[routes]]
 url = ""
@@ -14,9 +16,9 @@ controleur = "controleurs/statistiques.py"
 template = "statistiques.html"
 
 [[routes]]
-url = "grille_pygame"
-controleur = "controleurs/grille_pygame.py"
-template = "grille_pygame.html"
+url = "grille"
+controleur = "controleurs/grille.py"
+template = "grille.html"
 
 [[routes]]
 url = "pioche"

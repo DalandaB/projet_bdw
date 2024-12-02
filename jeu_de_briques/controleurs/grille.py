@@ -1,6 +1,22 @@
-import pygame
+from model.model_pg import grille
+
+REQUEST_VARS['grille_jeu'] = grille(SESSION['CONNEXION'])
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 # Define some colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -102,6 +118,43 @@ pygame.quit()
 
 
 
+for row in range(1,7):
+    if row == 1 or row == 6:
+        for column in range(1,8,4):
+            grid[row][column] = 1
+            grid[row][column+1] = 1
+    else:
+        for column in range (1,8,2): 
+            grid[row][column] = 1
+
+grid[3][2] = 1 
+grid[4][2] = 1 
+
+
+
+<div class="container">
+
+    {% for row in range(8) %}
+        {% for row in range(9) %}
+            <div class= "black"></div>
+        {% endfor %}
+    {% endfor %}
+
+
+    {% for row in range(1,7) %}
+        {% if row == 1 or row == 6 %}
+            {% for column in range(1,8,4) %}
+                <div  id="special" ></div>
+            {% endfor %}
+        {% endif %}
+        {% else %}
+            {% for column in range (1,8,2) %}
+                <div  id="special" ></div>
+            {% endfor %}
+    {% endfor %}
+</div>
+
+"""
 
 
 

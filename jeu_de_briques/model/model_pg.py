@@ -86,17 +86,85 @@ def get_existing_piece(connexion,id_piece):
     return execute_select_query(connexion, query, [id_piece])
 
     
+    #content
+    column +=4
  
-    
+
  
-    
+def grille(connexion):
+    grid = []
+    for row in range(8):
+        # Add an empty array that will hold each cell
+        # in this row
+        grid.append([])
+    for column in range(9):
+        grid[row].append(0)  # Append a cell
+
+
+    #J'avais confondu == avec =
+    for row in range(1,7):
+        if row == 1 or row == 6:
+            
+
+            for column in range(1,8,4):
+                if column+2 < 9:
+                    grid[row][column] = 1
+                if column + 1 < 9:
+                    grid[row][column + 1] = 1
+                #grid[row][column+1] = 1
+        else:
+            for column in range (1,8,2): 
+                grid[row][column] = 1
+
+    grid[3][2] = 1 
+    grid[4][2] = 1 
+    # Vérifiez les dimensions de la grille
+    assert len(grid) == 8 and all(len(row) == 9 for row in grid), "Grille incorrecte"
+    return grid
+
+   
 
     
  
     
  
      
+"""
+def grille(connexion):
+    grid = []
+    for row in range(8):
+        # Add an empty array that will hold each cell
+        # in this row
+        grid.append([])
+    for column in range(9):
+        grid[row].append(0)  # Append a cell
+
+
+    #J'avais confondu == avec =
+    for row in range(1,7):
+        if row == 1 or row == 6:
+            
+            column = 1
+            while column < 9 :
+                if column+2 < 9:
+                    grid[row][column] = 1
+                if column + 1 < 9:
+                    grid[row][column + 1] = 1
+                #grid[row][column+1] = 1
+                column += 4
+        else:
+            for column in range (1,8,2): 
+                grid[row][column] = 1
+
+    grid[3][2] = 1 
+    grid[4][2] = 1 
+    # Vérifiez les dimensions de la grille
+    assert len(grid) == 8 and all(len(row) == 9 for row in grid), "Grille incorrecte"
+    return grid
+
  
+ 
+ """
     
         
         

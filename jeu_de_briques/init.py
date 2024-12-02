@@ -27,4 +27,22 @@ template = "grille_pygame.html"
     {% for instance in REQUEST_VARS['infos_pieces'] %}
         <p>id : {instance[0]}, longueur:{instance[1]}, largeur:{instance[2]}, couleur:{instance[4]}</p>
     {%endfor%}
+
+
+    
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 1px;
+    }
+
+    .black{
+        background : black;
+        height: 50px;
+    }
+
+    #special {
+        background-color: green; /* Couleur spécifique */
+      }
 """
