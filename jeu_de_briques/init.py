@@ -24,5 +24,7 @@ template = "grille_pygame.html"
 
     piece :{{ id_piece[0] }},longueur :{{ id_piece[1] }},largeur :{{ id_piece[2] }},couleur :{{ id_piece[4] }}
 
-
+    {% for instance in REQUEST_VARS['infos_pieces'] %}
+        <p>id : {instance[0]}, longueur:{instance[1]}, largeur:{instance[2]}, couleur:{instance[4]}</p>
+    {%endfor%}
 """
