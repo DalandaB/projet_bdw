@@ -4,16 +4,17 @@
 {% block main_content %}
 
 
-
+<!-- le problème n'est pas ici, il est dans model_pg.py, donc vas relire toute la fonction-->
 
 <h1>Grille 9x8</h1>
+
 <div class="container">
   {% for row in REQUEST_VARS['grille_jeu'] %}
     {% for cell in row %}
       {% if cell == 1 %}
           <div class="green"></div>
       {% else %}
-          <div class="cell"></div>
+          <div class="black"></div>
     
       {% endif %}
       
@@ -22,11 +23,9 @@
   {% endfor %}
 </div>
 
-<!--    
+   
 
-
-  {% else %}
-        <div class="cell"></div>
+<!-- 
 -->
 
 {% endblock %}

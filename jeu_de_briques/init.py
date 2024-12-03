@@ -45,4 +45,33 @@ template = "grille_pygame.html"
     #special {
         background-color: green; /* Couleur spécifique */
       }
+
+    .cell {
+width: 50px;
+height: 50px;
+border: 1px solid black;
+}
+
+.container {
+display: grid;
+grid-template-columns: repeat(9, 1fr);
+gap: 1px;
+}
+
+
+
+.container {
+display: grid;
+grid-template-columns: repeat(9, 1fr);
+}
+
+.green {
+background-color: green;
+}
+
+.black{
+    background : black;
+    height: 50px;
+    width: 50px;
+}
 """

@@ -1,6 +1,6 @@
 from model.model_pg import grille
 
-REQUEST_VARS['grille_jeu'] = grille(SESSION['CONNEXION'])
+REQUEST_VARS['grille_jeu'] = grille()
 
 
 

@@ -1,17 +1,24 @@
 
 
 .container {
-display: grid;
-grid-template-columns: repeat(9, 1fr);
-gap: 1px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 9 colonnes uniformes */
+    grid-gap: 1px; /* Espace entre les briques */
+    width: 450px; /* Largeur totale de la grille pour uniformité */
+    height: 400px; /* Hauteur totale */
+    background-color: rgba(0, 0, 0, 0); /* Couleur de fond pour faire ressortir les briques */
 }
+
 .cell {
-width: 50px;
-height: 50px;
-border: 1px solid black;
+    width: 50px; /* Taille uniforme des briques */
+    height: 50px;
+    border: 1px solid black; /* Optionnel pour définir un contour noir */
 }
+
 .green {
-background-color: green;
+    background-color: green;
 }
 
-
+.black {
+    background-color: black;
+}
