@@ -1,0 +1,43 @@
+{% extends "base_random_g.html" %}
+
+
+{% block main_content %}
+
+
+<!-- le problème n'est pas ici, il est dans model_pg.py, donc vas relire toute la fonction-->
+
+<h1>Grille_aleatoire</h1>
+
+<!-- on va faire un mini formulaire avec get où la personne choisit la longueur et la largeur-->
+ <h2>entrez les dimensions de votre grille</h2>
+
+ <form method="post">
+    <input type="number" name="longueur" placeholder="longueur de grille"/>
+    <input type="number" name="hauteur" placeholder="hauteur de grille"/>
+    <input type="submit" value="valider">
+ </form>
+
+
+{% if POST['longueur'] and POST['hauteur'] %}
+    <p>affichage de la grille de longueur {{POST['longueur'][0]}} et de hauteur {{POST['hauteur'][0]}}  </p>
+
+    <div class="container" style="--longueur: {{ POST['longueur'][0] }}; --hauteur: {{ POST['hauteur'][0] }};" >
+    {% for row in REQUEST_VARS['grille_aleatoire'] %}
+        {% for cell in row  %}
+            {% if cell == 1 %}
+                <div class="green"></div>
+            {% elif cell == 2 %}
+                <div class="gray"></div> 
+            {% else %}
+                <div class="black"></div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+{% endif %}
+   
+
+<!-- 
+-->
+
+{% endblock %}

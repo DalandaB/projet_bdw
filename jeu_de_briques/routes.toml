@@ -31,6 +31,12 @@ controleur = "controleurs/pioche.py"
 template = "pioche.html"
 
 
+[[routes]]
+url = "random_grille"
+controleur = "controleurs/random_grille.py"
+template = "random_grille.html"
+
+
 
 
 

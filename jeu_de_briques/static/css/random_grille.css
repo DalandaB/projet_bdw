@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(var(--longueur), 1fr); /* Nombre de colonnes basé sur la longueur */
+    /*grid-template-rows: repeat(var(--hauteur), 1fr);     Nombre de lignes basé sur la hauteur */
+    gap: 1px;  /*Espacement entre les cellules */
+    width: 10%; /* S'ajuste automatiquement à l'espace disponible */
+    height: auto; /* Hauteur flexible en fonction du contenu */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir légèrement transparent */
+}
+
+.cell{
+
+    width: 50px; /* Taille fixe des cases */
+    height: 50px;
+
+}
+.green {
+    background-color: green;
+    width: 50px; /* Taille fixe des cases */
+    height: 50px;
+}
+
+.gray {
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+}
+
+.black {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+}
